@@ -10,9 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.16",
+    "@headlessui/react": "^1.7.19",
     "@heroicons/react": "^2.0.18",
     "@reduxjs/toolkit": "^1.9.5",
+    "caniuse-lite": "^1.0.30001695",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.4",
