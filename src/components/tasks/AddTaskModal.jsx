@@ -1,10 +1,17 @@
 import { useForm } from "react-hook-form";
 import Modal from "../ui/Modal";
+import { useDispatch } from "react-redux";
+import { addTask } from "../../redux/features/tasks/tasksSlice";
 
 const AddTaskModal = ({ isOpen, setIsOpen }) => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
+  const disPatch = useDispatch();
+  const onCancel = () => {
+    reset();
+    setIsOpen(false);
+  } 
   const onSubmit = (data) => {
-    console.log(data);
+    disPatch(addTask(data));
   };
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Add Task">
@@ -23,6 +30,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
           <textarea
             className="border border-secondary/20 rounded-md p-2 h-24"
             name=""
+            {...register("description")}
             id="description"
             cols="30"
             rows="10"
@@ -54,7 +62,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
         </div>
         <div className="mb-3 flex flex-col gap-3">
           <label htmlFor="priority">Priority</label>
-          <select className="border border-secondary/20 rounded-md p-2">
+          <select id="priority" {...register("priority")} className="border border-secondary/20 rounded-md p-2">
             <option value="high">High</option>
             <option value="medium">Medium</option>
             <option value="low">Low</option>
@@ -64,7 +72,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
           <button className="btn btn-primary hover:bg-blue-600" type="submit">
             Submit
           </button>
-          <button className="btn btn-danger hover:bg-red-600">Cancel</button>
+          <button onClick={onCancel} className="btn btn-danger hover:bg-red-600">Cancel</button>
         </div>
       </form>
     </Modal>
