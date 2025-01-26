@@ -9,8 +9,11 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Add Task">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" { ...register("name") }/>
-        <button type="submit">Submit</button>
+       <div className="mb-3 flex flex-col gap-3 ">
+       <label htmlFor="title" >Title</label>
+       <input className ="border border-secondary/20 rounded-md p-2" type="text" id="title"{ ...register("name") }/>
+       </div>
+        <button className="btn btn-primary" type="submit">Submit</button>
       </form>
     </Modal>
   );
