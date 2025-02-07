@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     tasks :[],
-    userTasks: [],
+    userSpecTasks: [],
 }
 
-const tasksSpecSlice = createSlice({
+const tasksSlice = createSlice({
 
     name: 'tasksSlice',
     initialState,
@@ -27,7 +27,7 @@ const tasksSpecSlice = createSlice({
      target.status = payload.status
     },
     userTasks:(state,{payload}) => {
-        state.userTasks = state.tasks.filter((item) => item.assignedTo === payload);
+        state.userSpecTasks = state.tasks.filter((item) => item.assignedTo === payload);
     }  
     }
 })
