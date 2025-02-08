@@ -72,7 +72,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
           <button className="btn btn-primary hover:bg-blue-600" type="submit">
             Submit
           </button>
-          <button onClick={onCancel} className="btn btn-danger hover:bg-red-600">Cancel</button>
+          <button  type="button" onClick={onCancel} className="btn btn-danger hover:bg-red-600">Cancel</button>
         </div>
       </form>
     </Modal>

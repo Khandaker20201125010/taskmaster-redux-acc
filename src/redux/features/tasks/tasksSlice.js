@@ -23,8 +23,9 @@ const tasksSlice = createSlice({
             state.tasks.push({id: 1,status:'pending' ,...payload});
         }
         else{
-        const lastElement =  state.tasks.at(-1).id += 1;
-        state.tasks.push({id: lastElement.id + 1,...payload});
+        const lastElement =  state.tasks.at(-1);
+        state.tasks.push({id: lastElement.id + 1,
+            status:'pending' ,...payload});
         }
      },
      removeTask:(state,{payload}) => {
