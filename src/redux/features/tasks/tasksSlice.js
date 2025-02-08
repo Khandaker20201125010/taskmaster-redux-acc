@@ -1,7 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    tasks :[],
+    tasks :[{
+        id: 1,
+        title: "Task 1",
+        description: "Description 1",
+        assignedTo: "Pranto",
+        priority: "low",
+        status: "pending",
+        date: "2023-01-01",
+    }],
     userSpecTasks: [],
 }
 

@@ -10,7 +10,7 @@ import TaskDetails from './TaskDetails';
 const MyTasks = () => {
   const {tasks ,userSpecTasks} = useSelector((state) => state.tasksSlice);
   const { name: userName } = useSelector((state) => state.userSlice);
-  const { isOpen, setIsOpen } = useState(false);
+  const [ isOpen, setIsOpen]  = useState(false);
   const dispatch = useDispatch();
   useEffect(()=>{
    dispatch(userTasks(userName))
@@ -22,7 +22,7 @@ const MyTasks = () => {
       {
         userSpecTasks?.map((item) => (
           <div
-          key={item.id}
+          key={item?.id}
           className="bg-secondary/10 rounded-md p-3 flex justify-between"
           >
           <TaskDetails isOpen={isOpen} setIsOpen={setIsOpen} task={item}></TaskDetails>
