@@ -11,7 +11,7 @@ const TaskCard = ({ task }) => {
   } else if (task.status === "running") {
     updatedStatus = "done";
   } else {
-    updatedStatus = "pending";
+    updatedStatus = "archived";
   }
 
   return (
