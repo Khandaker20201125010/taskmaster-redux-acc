@@ -8,7 +8,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
   const disPatch = useDispatch();
   const onCancel = () => {
     reset();
-    setIsOpen(false);
+   
   } 
   const onSubmit = (data) => {
     disPatch(addTask(data));
