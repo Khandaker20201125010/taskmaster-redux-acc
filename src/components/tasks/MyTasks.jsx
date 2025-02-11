@@ -15,7 +15,7 @@ const MyTasks = () => {
   const [taskId, setTaskId] = useState(0);
 
   const handleModel = (id) => {
-    setTaskId(id);
+    // setTaskId(id);
     setIsOpen(!isOpen);
 
   };
